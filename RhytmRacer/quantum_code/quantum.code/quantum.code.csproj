@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
   <PropertyGroup>
@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Quantum</RootNamespace>
     <AssemblyName>quantum.code</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <!-- Valid options are: (empty), max-components-512 -->
@@ -80,6 +80,7 @@
     <Compile Include="Core\Core.cs" />
     <Compile Include="Frame.User.cs" />
     <Compile Include="FrameContext.User.cs" />
+    <Compile Include="Platformer\MovementSystem.cs" />
     <Compile Include="RuntimeConfig.User.cs" />
     <Compile Include="RuntimePlayer.User.cs" />
     <Compile Include="SimulationConfig.User.cs" />
@@ -88,6 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="db.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Platformer\Input.qtn" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

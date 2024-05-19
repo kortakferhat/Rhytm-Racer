@@ -2,6 +2,7 @@
 using Photon.Deterministic;
 using Quantum;
 using UnityEngine;
+using Input = Quantum.Input;
 
 public class LocalInput : MonoBehaviour {
     
@@ -10,7 +11,12 @@ public class LocalInput : MonoBehaviour {
   }
 
   public void PollInput(CallbackPollInput callback) {
-    Quantum.Input i = new Quantum.Input(); 
-    callback.SetInput(i, DeterministicInputFlags.Repeatable);
+    var input = new Input(); 
+    input.Jump = UnityEngine.Input.GetButton("Jump");
+    var x = UnityEngine.Input.GetAxis("Horizontal");
+    var y = UnityEngine.Input.GetAxis("Vertical");
+    
+    input.Directon = new Vector2(x, y).ToFPVector2();
+    callback.SetInput(input, DeterministicInputFlags.Repeatable);
   }
 }
